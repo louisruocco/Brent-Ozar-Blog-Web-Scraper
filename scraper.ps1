@@ -1,4 +1,4 @@
-$path = "C:\users\louis\desktop\test.txt"
+$path = "<insert link here>"
 Function DB-Check {
     if(!(test-path $path)){
         New-Item $path
