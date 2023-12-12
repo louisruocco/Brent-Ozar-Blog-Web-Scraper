@@ -2,4 +2,4 @@ $url = Invoke-WebRequest 'https://www.brentozar.com/archive/category/development
 $res = $url.ParsedHtml.getElementsByTagName('div') |
   Where-Object { $_.className -eq 'w-grid-list' }
 $links = $res | ForEach-Object { $_.getElementsByTagName('a') }
-$parse = $links.href
+$links.href | select -unique
