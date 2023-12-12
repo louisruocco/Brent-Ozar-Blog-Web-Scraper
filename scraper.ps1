@@ -12,10 +12,10 @@ $random = $links.href -replace '#comments', '' -replace 'https://www.brentozar.c
 
 function Randomise {
     $links = $random | Sort-Object {Get-Random}
-    $test = $links[0]
-    $link = Select-String -Path $path -Pattern $test
-    if($link -ne $links[0]){
-        Add-Content -Path $path -Value $test
+    $link = $links[0]
+    $check = Select-String -Path $path -Pattern $link
+    if($check -ne $links[0]){
+        Add-Content -Path $path -Value $link
     }
 }
 
