@@ -3,7 +3,7 @@ $res = $url.ParsedHtml.getElementsByTagName('div') |Where-Object { $_.className 
 $links = $res | ForEach-Object { $_.getElementsByTagName('a') }
 $random = $links.href -replace '#comments', '' -replace 'https://www.brentozar.com/archive/author/brento/', '' -replace 'https://www.brentozar.com/archive/category/videos/', '' -replace 'https://www.brentozar.com/archive/category/development/t-sql/', '' | Select-Object -Unique
 
-$path = "C:\Users\Louis\Desktop\test.txt"
+$path = "<insert path here>"
 Function DB-Check {
     if(!(test-path $path)){
         New-Item $path
